@@ -1,12 +1,20 @@
+import discord
 import praw
-from snackbot import auth
+
+import reddit_auth
+import discord_auth
 
 
-def login():
-    return praw.Reddit(client_id=auth.CLIENT_ID, client_secret=auth.CLIENT_SECRET, username=auth.USERNAME,
-                       password=auth.PASSWORD, user_agent=auth.USER_AGENT)
+def reddit_login():
+    return praw.Reddit(client_id=reddit_auth.CLIENT_ID, client_secret=reddit_auth.CLIENT_SECRET,
+                       username=reddit_auth.USERNAME, password=reddit_auth.PASSWORD, user_agent=reddit_auth.USER_AGENT)
+
+
+def discord_login():
+    client = discord.Client()
+    client.run(discord_auth.TOKEN)
 
 
 if __name__ == '__main__':
-    r = login()
+    r = reddit_login()
     # do cool things
