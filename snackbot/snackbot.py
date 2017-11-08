@@ -1,8 +1,9 @@
-import discord
 import praw
 
-import reddit_auth
-import discord_auth
+import discord
+from discord_client import discord_auth
+from reddit_client import reddit_auth
+from discord_client import bot
 
 
 def reddit_login():
@@ -17,4 +18,5 @@ def discord_login():
 
 if __name__ == '__main__':
     r = reddit_login()
-    # do cool things
+    snackbot = bot.SnackBot(r)
+    bot.start_bot(snackbot, discord_auth.TOKEN)
