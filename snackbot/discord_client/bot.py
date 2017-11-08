@@ -30,7 +30,3 @@ class SnackBot(Bot):
             except Exception as e:
                 print(f'Failed to load extension {extension}.', file=sys.stderr)
                 traceback.print_exc()
-
-
-def start_bot(bot: Bot, token: str):
-    bot.run(token, reconnect=True)
