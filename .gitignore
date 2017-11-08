@@ -174,5 +174,5 @@ venv.bak/
 .idea/workspace.xml
 
 .idea/*
-/snackbot/reddit_auth.py
-/snackbot/discord_auth.py
+/snackbot/reddit_client/reddit_auth.py
+/snackbot/discord_client/discord_auth.py
