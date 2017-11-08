@@ -20,7 +20,10 @@ class Reddit:
     @r.command()
     async def pic(self, subreddit_name: str):
         submission_url = fetch.get_random_media_submssion(self.bot, subreddit_name)
-        await self.bot.say(submission_url)
+        if submission_url is None:
+            await self.bot.say("Search timeout. Please select media-heavy subreddits only for this command.")
+        else:
+            await self.bot.say(submission_url)
 
 
 def setup(bot):
