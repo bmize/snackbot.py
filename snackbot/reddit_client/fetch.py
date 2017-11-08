@@ -22,7 +22,7 @@ def get_random_media_submssion(bot, subreddit_name: str):
 
     start = time.time()
     while netloc not in accepted_sources:
-        if time.time() - start >= 5:
+        if time.time() - start >= 3:
             return None
         submission = subreddit.random()
         netloc = urlparse(submission.url).netloc
