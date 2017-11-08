@@ -1,1 +1,1 @@
-worker: python snackbot.py
+worker: python /snackbot/snackbot.py
