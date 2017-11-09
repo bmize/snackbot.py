@@ -8,8 +8,15 @@ import time
 
 accepted_sources = (
     'i.redd.it',
+    'imgur.com',
     'i.imgur.com',
     'media.giphy.com',
+    'gfycat.com',
+    'giant.gfycat.com'
+)
+
+blacklisted_titles = (
+    'nigri',
 )
 
 
@@ -21,7 +28,7 @@ def get_random_media_submssion(bot, subreddit_name: str):
     netloc = uri.netloc
 
     start = time.time()
-    while netloc not in accepted_sources:
+    while netloc not in accepted_sources or any(x in submission.title.lower() for x in blacklisted_titles):
         if time.time() - start >= 3:
             return None
         submission = subreddit.random()
