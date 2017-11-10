@@ -16,7 +16,7 @@ def reddit_login():
 
 def run_bot():
     r = reddit_login()
-    snackbot = bot.SnackBot(r)
+    snackbot = bot.SnackBot(r, '!')
     snackbot.run(os.environ['DISCORD_TOKEN'], reconnect=True)
 
 

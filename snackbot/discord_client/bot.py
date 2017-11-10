@@ -15,8 +15,8 @@ initial_extensions = (
 
 
 class SnackBot(Bot):
-    def __init__(self, reddit):
-        super().__init__(command_prefix='!', description='SnackBot by bsnackin#3818', pm_help=True)
+    def __init__(self, reddit, prefix):
+        super().__init__(command_prefix=prefix, description='SnackBot by bsnackin#3818', pm_help=True)
         self.reddit = reddit
 
     async def on_ready(self):
