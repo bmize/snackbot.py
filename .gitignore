@@ -176,3 +176,4 @@ venv.bak/
 .idea/*
 /snackbot/reddit_client/reddit_auth.py
 /snackbot/discord_client/discord_auth.py
+snackbot/snackbot_local.py
