@@ -2,15 +2,10 @@
 
 Contains main function for running snackbot
 """
+
 import praw
 from discord_client import bot
 import os
-
-"""
-def reddit_login():
-    return praw.Reddit(client_id=reddit_auth.CLIENT_ID, client_secret=reddit_auth.CLIENT_SECRET,
-                       username=reddit_auth.USERNAME, password=reddit_auth.PASSWORD, user_agent=reddit_auth.USER_AGENT)
-"""
 
 
 def reddit_login():
