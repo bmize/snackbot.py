@@ -6,7 +6,7 @@ Used to fetch posts/images/etc. from reddit.com
 from urllib.parse import urlparse
 import time
 import random
-from logging import Logger
+import logging
 
 accepted_sources = (
     'i.redd.it',
@@ -38,12 +38,13 @@ def get_random_media_submssion(bot, subreddit_name: str):
 
     return submission.url
 
-def get_random_submission_by_title(bot, subreddit_name: str, search_str:str):
+
+def get_random_submission_by_title(bot, subreddit_name: str, search_str: str):
     results = []
     for result in bot.reddit.subreddit(subreddit_name).search('title:' + search_str):
         results.append(result.permalink)
 
-    Logger.debug('subreddit: ' + subreddit_name + ' search string: ' + search_str + ' results length: '
+    logging.debug('subreddit: ' + subreddit_name + ' search string: ' + search_str + ' results length: '
                  + str(len(results)))
 
     return random.choice(results)
