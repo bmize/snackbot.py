@@ -4,7 +4,6 @@ Bot commands relating to reddit
 """
 
 from discord.ext import commands
-
 from reddit_client import fetch
 
 
@@ -19,9 +18,9 @@ class Reddit:
 
     @r.command()
     async def pic(self, subreddit_name: str):
-        submission_url = fetch.get_random_media_submssion(self.bot, subreddit_name)
+        submission_url = fetch.get_random_media_submission(self.bot, subreddit_name)
         if submission_url is None:
-            await self.bot.say("Search timeout. Please select media-heavy subreddits only for this command.")
+            await self.bot.say("No results found. Please select media-heavy subreddits only for this command.")
         else:
             await self.bot.say(submission_url)
 

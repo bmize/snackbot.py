@@ -6,7 +6,6 @@ Bot commands involving random chance
 from collections import namedtuple
 import random
 from discord.ext import commands
-
 from discord_client.utils import dnd
 
 
