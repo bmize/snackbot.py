@@ -13,7 +13,8 @@ accepted_sources = (
     'giphy.com',
     'media.giphy.com',
     'gfycat.com',
-    'giant.gfycat.com'
+    'giant.gfycat.com',
+    'clips.twitch.tv',
 )
 
 blacklisted_titles = (
