@@ -25,7 +25,7 @@ blacklisted_titles = (
 def get_random_media_submission(bot, subreddit_name: str):
     subreddit = bot.reddit.subreddit(subreddit_name)
     site_str = ' OR '.join(accepted_sources)
-    results = list(subreddit.search('site:' + site_str, sort='top', time_filter='week', limit=300))
+    results = list(subreddit.search('site:' + site_str, sort='new', time_filter='week', limit=300))
     if not results:
         return None
     result = random.choice(results)
