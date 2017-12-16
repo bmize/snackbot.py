@@ -15,8 +15,19 @@ class Misc:
         await self.bot.say('yeah, IDIOT!')
 
     @commands.command()
-    async def havemercypls(self):
-        await self.bot.say('http://readeroffictions.com/wp-content/uploads/2016/02/gif-ill-kill-you-office.gif')
+    async def uwot(self):
+        await self.bot.say('https://i.imgur.com/IoAhjlR.gif')
+
+    @commands.command(name='commands')
+    async def command_list(self):
+        commands = "**Command List**" \
+                   "  !r pic [subreddit]" \
+                   "  !r search [subreddit] [title keywords]" \
+                   "  !snack" \
+                   "  !lenny" \
+                   "  !roll [dice roll] - e.g. !roll 2d6" \
+                   "  !idiot"
+        await self.bot.say(commands)
 
 
 def setup(bot):
