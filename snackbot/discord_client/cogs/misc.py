@@ -20,13 +20,13 @@ class Misc:
 
     @commands.command(name='commands')
     async def command_list(self):
-        commands = "**Command List**" \
-                   "  !r pic [subreddit]" \
-                   "  !r search [subreddit] [title keywords]" \
-                   "  !snack" \
-                   "  !lenny" \
-                   "  !roll [dice roll] - e.g. !roll 2d6" \
-                   "  !idiot"
+        commands = "**Command List**\n" \
+                   "  !r pic [subreddit]\n" \
+                   "  !r search [subreddit] [title keywords]\n" \
+                   "  !snack\n" \
+                   "  !lenny\n" \
+                   "  !roll [dice roll] - e.g. !roll 2d6\n" \
+                   "  !idiot\n"
         await self.bot.say(commands)
 
 
