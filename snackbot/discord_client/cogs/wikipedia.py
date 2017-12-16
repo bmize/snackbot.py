@@ -11,7 +11,7 @@ class Wikipedia:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command
+    @commands.command(name='snack')
     async def snack(self):
         snack = wiki.get_snack()
         base_str = 'Your snack is '
