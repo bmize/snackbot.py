@@ -11,10 +11,10 @@ class Wikipedia:
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='snackoftheday')
-    async def snack_of_the_day(self):
+    @commands.command
+    async def snack(self):
         snack = wiki.get_snack()
-        base_str = 'The snack of the day is '
+        base_str = 'Your snack is '
 
         # If no wiki link available
         if snack[1] is None:
