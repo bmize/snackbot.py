@@ -16,8 +16,7 @@ class Wikipedia:
         snack = wiki.get_snack()
         base_str = 'Your snack is '
 
-        # If no wiki link available
-        if snack[1] is None:
+        if snack[1] is None:    # If no wiki link available
             await self.bot.say(base_str + snack[0] + '!')
         else:
             await self.bot.say(base_str + snack[0] + '! ' + snack[1])

@@ -32,7 +32,7 @@ class RNG:
 
     @commands.command()
     async def roll(self, die_info):
-        """Displays the result of rolling count dice with count sides"""
+        """Displays the result of rolling i dice with j sides"""
         Die = namedtuple('Dice', 'num sides')
         try:
             die = Die(*dnd.parse_roll_syntax(die_info))
