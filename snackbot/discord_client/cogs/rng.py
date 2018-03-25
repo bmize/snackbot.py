@@ -32,12 +32,12 @@ class RNG:
 
     @commands.command()
     async def roll(self, die_info):
-        """Displays the result of rolling i dice with j sides"""
+        """Displays the result of rolling dice in standard D&D style (e.g. '2d6')"""
         Die = namedtuple('Dice', 'num sides')
         try:
             die = Die(*dnd.parse_roll_syntax(die_info))
             rolls = dnd.roll_dice(die.num, die.sides)
-            await self.bot.say(', '.join(rolls))
+            await self.bot.say("```\n" + ', '.join(rolls) + "\n```")
         except TypeError:
             await self.bot.say('Incorrect die format. Sample format: !roll 2d6')
 

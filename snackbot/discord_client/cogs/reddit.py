@@ -13,11 +13,13 @@ class Reddit:
 
     @commands.group(pass_context=True)
     async def r(self, ctx):
+        """Enables reddit subcommands, such as !r pic and !r search"""
         if ctx.invoked_subcommand is None:
             await self.bot.say('Invalid reddit subcommand passed')
 
     @r.command()
     async def pic(self, subreddit_name: str):
+        """Posts a link to a random image from the provided subreddit"""
         try:
             submission_url = fetch.get_random_media_submission(self.bot, subreddit_name)
             if submission_url is None:
@@ -29,6 +31,7 @@ class Reddit:
 
     @r.command()
     async def search(self, subreddit_name: str, search_str: str):
+        """Posts a link to a random submission from the provided subreddit"""
         try:
             submission_url = fetch.get_random_submission_by_title(self.bot, subreddit_name, search_str)
             if submission_url is None:
