@@ -23,7 +23,7 @@ class Misc:
     @commands.command(name='commands')
     async def command_list(self):
         """Displays a list of commands and their input formats"""
-        commands =  "**Command List**\n" \
+        commands =  "Command List\n" \
                     "  !r pic [subreddit]\n" \
                     "  !r search [subreddit] [title keywords]\n" \
                     "  !snack\n" \
