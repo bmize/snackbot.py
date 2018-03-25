@@ -11,7 +11,7 @@ initial_extensions = (
     'discord_client.cogs.reddit',
     'discord_client.cogs.misc',
     'discord_client.cogs.rng',
-    'discord_client.cogs.wikipedia',
+    'discord_client.cogs.snacks',
 )
 
 
