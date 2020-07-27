@@ -14,6 +14,7 @@ accepted_sources = (
     'media.giphy.com',
     'gfycat.com',
     'giant.gfycat.com',
+    'redgifs.com',
     'clips.twitch.tv',
 )
 
@@ -25,7 +26,7 @@ blacklisted_titles = (
 def get_random_media_submission(bot, subreddit_name: str):
     subreddit = bot.reddit.subreddit(subreddit_name)
     site_str = ' OR '.join(accepted_sources)
-    results = list(subreddit.search('site:(' + site_str + ')', sort='new', time_filter='month', limit=300))
+    results = list(subreddit.search('site:(' + site_str + ')', sort='new', time_filter='month', limit=1000))
     if not results:
         return None
     result = random.choice(results)
