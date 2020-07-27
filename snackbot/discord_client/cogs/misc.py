@@ -6,22 +6,22 @@ Miscellaneous and frivolous commands
 from discord.ext import commands
 
 
-class Misc:
+class Misc(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command()
-    async def idiot(self):
+    async def idiot(self, ctx):
         """Agrees with the assertion that somebody is an idiot."""
-        await self.bot.say('yeah, IDIOT!')
+        await ctx.send('yeah, IDIOT!')
 
     @commands.command()
-    async def uwot(self):
+    async def uwot(self, ctx):
         """Posts a .gif link in reaction to an absurd or terrible statement."""
-        await self.bot.say('https://i.imgur.com/IoAhjlR.gif')
+        await ctx.send('https://i.imgur.com/IoAhjlR.gif')
 
     @commands.command(name='commands')
-    async def command_list(self):
+    async def command_list(self, ctx):
         """Displays a list of commands and their input formats"""
         commands =  "Command List\n" \
                     "  !r pic [subreddit]\n" \
@@ -31,7 +31,7 @@ class Misc:
                     "  !roll [dice roll] - e.g. !roll 2d6\n" \
                     "  !idiot\n" \
                     "  !uwot\n"
-        await self.bot.say("```\n" + commands + "\n```")
+        await ctx.send("```\n" + commands + "\n```")
 
 
 def setup(bot):
