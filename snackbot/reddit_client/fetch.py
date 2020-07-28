@@ -31,6 +31,7 @@ def get_random_media_submission(bot, subreddit_name: str):
         return None
     result = random.choice(results)
     while any(x in result.title.lower() for x in blacklisted_titles):
+        results.remove(result)
         result = random.choice(results)
     return result.url
 
